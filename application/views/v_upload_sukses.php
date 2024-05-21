@@ -12,5 +12,6 @@
         <li><?php echo $item; ?>: <?php echo $value; ?></li>
     <?php endforeach; ?>
 </ul>
+<a href="<?php echo base_url() . 'upload/lakukan_download/' . $upload_data['file_name']; ?>">Download File</a>
 </body>
-</html>
+</html> 

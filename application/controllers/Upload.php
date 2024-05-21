@@ -7,7 +7,7 @@ class Upload extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
+        $this->load->helper(array('form', 'url', 'download'));
     }
 
 public function index()
@@ -19,7 +19,7 @@ public function aksi_upload()
 {
     $config['upload_path']      = './gambar/';
     $config['allowed_types']    = 'gif|jpg|png';
-    $config['max_size']         = 100;
+    $config['max_size']         = 10000;
     $config['max_width']        = 1024;
     $config['max_height']       = 768;
 
@@ -33,6 +33,11 @@ public function aksi_upload()
         $this->load->view('v_upload_sukses', $data);
     }
 }
+
+    public function lakukan_download($nama_file)
+    {
+        force_download('gambar/'.$nama_file, NULL);
+    }
         
 }
         
